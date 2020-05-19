@@ -26,9 +26,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.text_1)
-    public void onClick(){
-        startActivity(new Intent(MainActivity.this,ReferencedJoinPropertyAcyivity.class));
+    @OnClick({R.id.text_1,R.id.text_2})
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.text_1:
+                startActivity(new Intent(MainActivity.this,ReferencedJoinPropertyAcyivity.class));
+                break;
+            case R.id.text_2:
+                startActivity(new Intent(MainActivity.this,JoinEntityActivity.class));
+                break;
+        }
+
         }
     }
 

@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReferencedJoinPropertyAcyivity"/>
+        <activity android:name=".JoinEntityActivity"></activity>
     </application>
 
 </manifest>

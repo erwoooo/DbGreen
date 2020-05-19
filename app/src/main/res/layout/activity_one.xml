@@ -38,6 +38,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+
+</LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
     <TextView
         android:layout_weight="1"
         android:id="@+id/text5"
@@ -67,7 +73,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_son"
         android:layout_width="match_parent"

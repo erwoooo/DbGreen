@@ -8,10 +8,17 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_weight="1"
         android:id="@+id/text_1"
         android:gravity="center"
         android:text="ReferencedJoinProperty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text_2"
+        android:gravity="center"
+        android:text="JoinEntity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

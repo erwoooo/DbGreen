@@ -3,9 +3,12 @@ package com.example.dbgreen.utils;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.erwo.greendao.gen.CustomerDao;
+import com.erwo.greendao.gen.CustomerWithOrderDao;
 import com.erwo.greendao.gen.DaoMaster;
 import com.erwo.greendao.gen.DaoSession;
 import com.erwo.greendao.gen.FatherDao;
+import com.erwo.greendao.gen.OrderDao;
 import com.erwo.greendao.gen.SonDao;
 
 public class DBManager {
@@ -37,5 +40,17 @@ public class DBManager {
 
     public SonDao getSonDao(){
         return mDaoSession.getSonDao();
+    }
+
+    public CustomerDao getCustomerDao(){
+        return mDaoSession.getCustomerDao();
+    }
+
+    public OrderDao getOrderDao(){
+        return mDaoSession.getOrderDao();
+    }
+
+    public CustomerWithOrderDao getCustomerWithOrderDao(){
+        return mDaoSession.getCustomerWithOrderDao();
     }
 }
