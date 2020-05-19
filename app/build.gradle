@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao' // 应用插件
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -13,7 +13,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -21,6 +24,14 @@ android {
         }
     }
 
+}
+greendao {
+    // 指定数据库schema版本号，迁移等操作会用到
+    schemaVersion 1
+    // 设置生成数据库文件的目录，默认是在build中，可以将生成的文件放到我们的java目录中
+    targetGenDir 'src/main/java'
+    // 设置生成的数据库相关文件的包名，默认为entity所在的包名
+    daoPackage 'com.erwo.greendao.gen'
 }
 
 dependencies {
@@ -31,4 +42,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'org.greenrobot:greendao:3.2.2' // 添加依赖
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    //如果少了这一行，@onclick将失效
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
+    implementation 'org.jetbrains:annotations:15.0'
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text1"
+        android:gravity="center"
+        android:text="插入子数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text2"
+        android:gravity="center"
+        android:text="插入父数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text3"
+        android:gravity="center"
+        android:text="查询子数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text4"
+        android:gravity="center"
+        android:text="查询父数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text5"
+        android:gravity="center"
+        android:text="插入子数据到父数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text6"
+        android:gravity="center"
+        android:text="清除关系"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text7"
+        android:gravity="center"
+        android:text="删除子数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text8"
+        android:gravity="center"
+        android:text="删除父数据"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_son"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/recycle_father"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
