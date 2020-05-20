@@ -8,6 +8,8 @@ import com.erwo.greendao.gen.CustomerWithOrderDao;
 import com.erwo.greendao.gen.DaoMaster;
 import com.erwo.greendao.gen.DaoSession;
 import com.erwo.greendao.gen.FatherDao;
+import com.erwo.greendao.gen.HumanDao;
+import com.erwo.greendao.gen.ManDao;
 import com.erwo.greendao.gen.OrderDao;
 import com.erwo.greendao.gen.SonDao;
 
@@ -52,5 +54,13 @@ public class DBManager {
 
     public CustomerWithOrderDao getCustomerWithOrderDao(){
         return mDaoSession.getCustomerWithOrderDao();
+    }
+
+    public HumanDao getHumanDao(){
+        return mDaoSession.getHumanDao();
+    }
+
+    public ManDao getManDao(){
+        return mDaoSession.getManDao();
     }
 }

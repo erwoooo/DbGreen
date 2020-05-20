@@ -21,4 +21,11 @@
         android:text="JoinEntity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/text_3"
+        android:gravity="center"
+        android:text="JoinProperties"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>

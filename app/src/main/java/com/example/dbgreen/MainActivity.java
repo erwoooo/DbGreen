@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.text_1,R.id.text_2})
+    @OnClick({R.id.text_1,R.id.text_2,R.id.text_3})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.text_1:
@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.text_2:
                 startActivity(new Intent(MainActivity.this,JoinEntityActivity.class));
+                break;
+            case R.id.text_3:
+                startActivity(new Intent(MainActivity.this,JoinPropertiesActivity.class));
                 break;
         }
 
