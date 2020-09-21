@@ -30,7 +30,8 @@ public class SonDao extends AbstractDao<Son, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property SonName = new Property(1, String.class, "sonName", false, "SON_NAME");
         public final static Property SonHome = new Property(2, String.class, "sonHome", false, "SON_HOME");
-        public final static Property FatherId = new Property(3, long.class, "fatherId", false, "FATHER_ID");
+        public final static Property SonTag = new Property(3, int.class, "sonTag", false, "SON_TAG");
+        public final static Property FatherId = new Property(4, long.class, "fatherId", false, "FATHER_ID");
     }
 
     private Query<Son> father_SonListQuery;
@@ -50,7 +51,8 @@ public class SonDao extends AbstractDao<Son, Long> {
                 "\"_id\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
                 "\"SON_NAME\" TEXT," + // 1: sonName
                 "\"SON_HOME\" TEXT," + // 2: sonHome
-                "\"FATHER_ID\" INTEGER NOT NULL );"); // 3: fatherId
+                "\"SON_TAG\" INTEGER NOT NULL ," + // 3: sonTag
+                "\"FATHER_ID\" INTEGER NOT NULL );"); // 4: fatherId
     }
 
     /** Drops the underlying database table. */
@@ -77,7 +79,8 @@ public class SonDao extends AbstractDao<Son, Long> {
         if (sonHome != null) {
             stmt.bindString(3, sonHome);
         }
-        stmt.bindLong(4, entity.getFatherId());
+        stmt.bindLong(4, entity.getSonTag());
+        stmt.bindLong(5, entity.getFatherId());
     }
 
     @Override
@@ -98,7 +101,8 @@ public class SonDao extends AbstractDao<Son, Long> {
         if (sonHome != null) {
             stmt.bindString(3, sonHome);
         }
-        stmt.bindLong(4, entity.getFatherId());
+        stmt.bindLong(4, entity.getSonTag());
+        stmt.bindLong(5, entity.getFatherId());
     }
 
     @Override
@@ -112,7 +116,8 @@ public class SonDao extends AbstractDao<Son, Long> {
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // sonName
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // sonHome
-            cursor.getLong(offset + 3) // fatherId
+            cursor.getInt(offset + 3), // sonTag
+            cursor.getLong(offset + 4) // fatherId
         );
         return entity;
     }
@@ -122,7 +127,8 @@ public class SonDao extends AbstractDao<Son, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setSonName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setSonHome(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setFatherId(cursor.getLong(offset + 3));
+        entity.setSonTag(cursor.getInt(offset + 3));
+        entity.setFatherId(cursor.getLong(offset + 4));
      }
     
     @Override

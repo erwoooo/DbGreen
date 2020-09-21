@@ -14,13 +14,15 @@ public class Son {
 
     private String sonHome;
 
+    private int sonTag;
     private long fatherId;
 
-    @Generated(hash = 1085088494)
-    public Son(Long id, String sonName, String sonHome, long fatherId) {
+    @Generated(hash = 2058619631)
+    public Son(Long id, String sonName, String sonHome, int sonTag, long fatherId) {
         this.id = id;
         this.sonName = sonName;
         this.sonHome = sonHome;
+        this.sonTag = sonTag;
         this.fatherId = fatherId;
     }
 
@@ -60,4 +62,11 @@ public class Son {
         this.fatherId = fatherId;
     }
 
+    public int getSonTag() {
+        return sonTag;
+    }
+
+    public void setSonTag(int sonTag) {
+        this.sonTag = sonTag;
+    }
 }

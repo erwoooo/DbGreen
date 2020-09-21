@@ -204,6 +204,7 @@ public class ReferencedJoinPropertyAcyivity extends AppCompatActivity {
             for (int i = 0 ; i < 60 ; i ++){
                 Son son = new Son();
                 son.setSonName("这是第" + i + "个孩子");
+                son.setSonTag(i);
                 sons.add(son);
             }
             DBManager.getInstance().getSonDao().insertOrReplaceInTx(sons);

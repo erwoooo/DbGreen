@@ -39,7 +39,7 @@ public class SonAdapter extends RecyclerView.Adapter<SonAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Son son = sonList.get(position);
         holder.tv_id.setText("子ID： " + son.getId() + "父id: " + son.getFatherId() );
-        holder.tv_name.setText("子name: " + son.getSonName());
+        holder.tv_name.setText("子name: " + son.getSonName() + " TAG: " + son.getSonTag());
     }
 
     @Override
